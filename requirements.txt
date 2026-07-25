@@ -1,0 +1,9 @@
+streamlit==1.60.0
+pymupdf==1.28.0
+python-docx==1.2.0
+presidio-analyzer
+spacy==3.8.14
+Faker==40.35.0
+pillow==12.3.0
+pandas==3.0.5
+opencv-python-headless

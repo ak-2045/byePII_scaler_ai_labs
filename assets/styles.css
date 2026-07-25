@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/lucide-static@latest/font/lucide.min.css');
+
+/* Main App Styles */
+html, body, [data-testid="stAppViewContainer"], [data-testid="stHeader"] {
+    background: linear-gradient(135deg, #090514 0%, #150f24 100%) !important;
+    background-attachment: fixed !important;
+    color: #e6e2fc !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+/* Hide Sidebar completely */
+section[data-testid="stSidebar"] {
+    display: none !important;
+}
+
+/* Remove padding/margin associated with hidden sidebar */
+[data-testid="stSidebarCollapseButton"] {
+    display: none !important;
+}
+
+/* Adjust Main Content Area */
+[data-testid="stAppViewBlockContainer"] {
+    max-width: 1000px !important;
+    padding-top: 2.5rem !important;
+    padding-bottom: 3rem !important;
+}
+
+/* Beautiful Glassmorphic Custom Cards */
+.custom-card {
+    background: rgba(24, 18, 43, 0.5) !important;
+    border: 1px solid rgba(155, 93, 229, 0.18) !important;
+    border-radius: 16px !important;
+    padding: 24px !important;
+    margin-bottom: 24px !important;
+    box-shadow: 0 8px 32px 0 rgba(10, 5, 20, 0.4) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    transition: all 0.3s ease !important;
+}
+
+.custom-card:hover {
+    border-color: rgba(155, 93, 229, 0.35) !important;
+    box-shadow: 0 12px 40px 0 rgba(155, 93, 229, 0.15) !important;
+}
+
+/* Parameter Grid Containers */
+.param-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Brand header styling */
+.brand-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.brand-logo-img {
+    max-height: 80px;
+    margin-bottom: 10px;
+}
+
+.brand-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #c084fc, #e879f9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    letter-spacing: -0.5px;
+}
+
+.brand-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    color: #c084fc;
+    opacity: 0.85;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+/* Style metrics */
+div[data-testid="stMetricValue"] {
+    font-size: 2.4rem !important;
+    font-weight: 700 !important;
+    color: #e879f9 !important;
+    text-shadow: 0 0 10px rgba(232, 121, 249, 0.25) !important;
+}
+
+div[data-testid="stMetricLabel"] {
+    font-size: 0.85rem !important;
+    color: #c084fc !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    font-weight: 600 !important;
+}
+
+/* Metric card styling background override */
+div[data-testid="stMetric"] {
+    background: rgba(24, 18, 43, 0.4) !important;
+    border: 1px solid rgba(155, 93, 229, 0.12) !important;
+    border-radius: 10px !important;
+    padding: 12px 15px !important;
+}
+
+/* Style Streamlit Action Buttons (Primary Buttons) */
+div.stButton > button[data-testid="stBaseButton-primary"] {
+    background: linear-gradient(90deg, #8b5cf6 0%, #d946ef 100%) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 12px 24px !important;
+    font-weight: 700 !important;
+    font-size: 1.05rem !important;
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.35) !important;
+    transition: all 0.25s ease-in-out !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+div.stButton > button[data-testid="stBaseButton-primary"]:hover {
+    background: linear-gradient(90deg, #a78bfa 0%, #f472b6 100%) !important;
+    box-shadow: 0 6px 25px rgba(217, 70, 239, 0.5) !important;
+    transform: translateY(-2px) !important;
+}
+
+div.stButton > button[data-testid="stBaseButton-primary"]:active {
+    transform: translateY(0px) !important;
+}
+
+/* Secondary Button styles (like download buttons) */
+div.stDownloadButton > button {
+    background: rgba(24, 18, 43, 0.6) !important;
+    color: #e6e2fc !important;
+    border: 1px solid rgba(155, 93, 229, 0.3) !important;
+    border-radius: 10px !important;
+    padding: 10px 20px !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    transition: all 0.2s ease !important;
+}
+
+div.stDownloadButton > button:hover {
+    border-color: #d946ef !important;
+    color: #ffffff !important;
+    background: rgba(139, 92, 246, 0.1) !important;
+    box-shadow: 0 0 15px rgba(217, 70, 239, 0.15) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Redacted/original visual column containers */
+.preview-header {
+    background: rgba(139, 92, 246, 0.08);
+    border-left: 4px solid #a855f7;
+    padding: 10px 14px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #f3e8ff;
+}
+
+/* Streamlit custom info boxes and warning alerts */
+.stAlert {
+    background-color: rgba(24, 18, 43, 0.6) !important;
+    border: 1px solid rgba(155, 93, 229, 0.2) !important;
+    border-radius: 12px !important;
+}
+
+/* File Uploader styling */
+[data-testid="stFileUploader"] {
+    background: rgba(24, 18, 43, 0.3) !important;
+    border: 1px dashed rgba(155, 93, 229, 0.3) !important;
+    border-radius: 12px !important;
+    padding: 15px !important;
+}
+
+[data-testid="stFileUploader"]:hover {
+    border-color: #d946ef !important;
+}
+
+/* Style Section Dividers */
+hr {
+    border-color: rgba(155, 93, 229, 0.15) !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
+/* Custom styled sections */
+.section-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #f3e8ff;
+    border-bottom: 2px solid rgba(139, 92, 246, 0.2);
+    padding-bottom: 8px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Custom Lucide Metric Cards */
+.custom-metric-card {
+    background: rgba(24, 18, 43, 0.45) !important;
+    border: 1px solid rgba(155, 93, 229, 0.15) !important;
+    border-radius: 12px !important;
+    padding: 15px 18px !important;
+    box-shadow: 0 4px 20px rgba(10, 5, 20, 0.3) !important;
+    transition: all 0.3s ease !important;
+    margin-bottom: 15px;
+}
+
+.custom-metric-card:hover {
+    border-color: rgba(155, 93, 229, 0.35) !important;
+    box-shadow: 0 8px 25px rgba(155, 93, 229, 0.15) !important;
+    transform: translateY(-2px);
+}
+
+.custom-metric-label {
+    font-size: 0.85rem !important;
+    color: #c084fc !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    font-weight: 600 !important;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.custom-metric-label i {
+    font-size: 1rem;
+    color: #e879f9;
+}
+
+.custom-metric-value {
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
+    color: #e879f9 !important;
+    text-shadow: 0 0 10px rgba(232, 121, 249, 0.25) !important;
+    margin-top: 8px;
+    font-family: 'Poppins', sans-serif;
+}
+
