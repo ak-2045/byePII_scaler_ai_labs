@@ -17,37 +17,37 @@ Think of it as having two coworkers tackling the same document at once. One read
 graph TD
     %% Define Nodes
     Start([Input Document: PDF, DOCX, TXT]) --> Split{Parallel Processing}
-    
+
     %% Left Branch: Text Redaction & Extraction
     Split -->|Branch 1: Text Processing| TextExt[Text Extraction]
-    TextExt --> DetectPII[Extraction of Sensitive Info <br> Regex & spaCy / Presidio]
-    
-    DetectPII --> LLMCheck{LLM False Positive Check <br> <font color="red"><b>(NOT IMPLEMENTED)</b></font>}
-    LLMCheck -.->|Fallback due to GenAI Limit| Blacklist[Blacklist Word Template Validation <br> Hardcoded Safeguards]
-    
+    TextExt --> DetectPII["Extraction of Sensitive Info<br/>Regex & spaCy / Presidio"]
+
+    DetectPII --> LLMCheck{"LLM False Positive Check<br/>(NOT IMPLEMENTED)"}
+    LLMCheck -.->|Fallback due to GenAI Limit| Blacklist["Blacklist Word Template Validation<br/>Hardcoded Safeguards"]
+
     Blacklist --> MinError[Minimize Error & Merge Entities]
-    MinError --> SyntheticMap[Synthetic Data Generation <br> Faker Consistency Mode]
+    MinError --> SyntheticMap["Synthetic Data Generation<br/>Faker Consistency Mode"]
     SyntheticMap --> ApplyRedact[Apply Text Replacement]
-    
+
     %% Right Branch: Image Processing
     Split -->|Branch 2: Image Processing| ImageExt[Page Render & Image Extraction]
     ImageExt --> LogoDetect[Logo & Card Identification]
-    LogoDetect --> YOLO{YOLO Object Detection Model <br> <font color="red"><b>(NOT IMPLEMENTED)</b></font>}
-    
+    LogoDetect --> YOLO{"YOLO Object Detection Model<br/>(NOT IMPLEMENTED)"}
+
     YOLO -.->|Alternative Pipeline| OpenCVDirect[OpenCV Direct Similarity Search]
-    OpenCVDirect --> ScaleSearch[Multi-Scale Template Matching <br> TM_CCOEFF_NORMED]
-    ScaleSearch --> PixelCompare[Direct Pixel Correlation Match <br> 128x128 Comparison]
+    OpenCVDirect --> ScaleSearch["Multi-Scale Template Matching<br/>TM_CCOEFF_NORMED"]
+    ScaleSearch --> PixelCompare["Direct Pixel Correlation Match<br/>128×128 Comparison"]
     PixelCompare --> ApplyBlur[Apply Gaussian Blur / Overlay Mask]
-    
+
     %% Merge & Outputs
     ApplyRedact --> Combine[Consolidate Output Document]
     ApplyBlur --> Combine
-    
+
     Combine --> SaveDoc[Save Anonymized File]
     Combine --> SaveLogs[Generate Reports]
-    
-    SaveDoc --> OutDoc[Output: redacted_filename.pdf/docx/txt]
-    SaveLogs --> OutJSON[Full JSON Audit Log <br> & Texts-Only JSON]
+
+    SaveDoc --> OutDoc["Output: redacted_filename.pdf/docx/txt"]
+    SaveLogs --> OutJSON["Full JSON Audit Log<br/>Texts-Only JSON"]
 ```
 
 ---
