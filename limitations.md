@@ -14,7 +14,7 @@ Despite implementing whitelist filters and custom validation rules, Microsoft Pr
 
 This behavior occurred because these words appeared in uppercase or business-style formatting, causing the NLP model to interpret them as company names rather than ordinary document text.
 
-![PII Classification False Positives](limitations_Content/1.png)
+![PII Classification False Positives](limitations_content/1.png)
 
 Although additional filtering reduced many of these errors, the issue demonstrates that contextual understanding remains one of the biggest limitations of rule-based PII detection.
 
@@ -28,7 +28,7 @@ I attempted to prevent unnecessary redactions by hardcoding common table headers
 
 As a result, some structured sections were partially redacted even though they contained no confidential data.
 
-![Table Header Processing Failure](limitations_Content/2.png)
+![Table Header Processing Failure](limitations_content/2.png)
 
 This highlights the difficulty of relying solely on text extraction when document structure varies significantly across different templates.
 
@@ -40,7 +40,7 @@ One particularly interesting observation involved names appearing beneath compan
 
 The system successfully redacted headings such as **"Contact Person"**, but occasionally failed to redact the actual person's name displayed immediately below.
 
-![Names Below Logos Escaping Redaction](limitations_Content/4.png)
+![Names Below Logos Escaping Redaction](limitations_content/4.png)
 
 During debugging, I found that names following punctuation such as colons (`:`) disrupted the token alignment used by spaCy's Named Entity Recognition pipeline.
 
@@ -120,7 +120,7 @@ Using OpenCV's multi-scale template matching, I successfully detected and blurre
 
 However, the pipeline consistently failed to detect the **Nuvama** logo.
 
-![Logo Blurring Inconsistency](limitations_Content/3.png)
+![Logo Blurring Inconsistency](limitations_content/3.png)
 
 The primary reason is that template matching relies heavily on visual similarity.
 
@@ -142,7 +142,7 @@ The OpenCV similarity pipeline successfully identified and blurred PAN cards usi
 
 However, it struggled to detect Aadhaar cards consistently.
 
-![ID Card Redaction Comparison](limitations_Content/5.png)
+![ID Card Redaction Comparison](limitations_content/5.png)
 
 Although both documents serve a similar purpose, their layouts, colors, and visual features differ enough that the existing similarity-based approach was unable to generalize effectively.
 
