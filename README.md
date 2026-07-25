@@ -107,12 +107,10 @@ python run_cli.py --input input.docx
 
 # 6. Documentation
 
-Looking for a deeper technical explanation? The following documents cover the complete architecture and implementation details.
-
 - **[System Architecture](system_architecture.md)** — Architecture diagrams, processing pipeline, component overview, and project structure.
-- **[Input Fields & Parameter Analysis](input_fields.md)** — Analysis of supported sensitive entities, validation rules, and mapping strategy.
-- **[Technology Stack Analysis](tech_stack.md)** — Explanation of the selected technologies and future improvements.
-- **[System Limitations & Observations](limitations.md)** — Known limitations, edge cases, and future enhancement opportunities.
+- **[Input Fields](input_fields.md)** — Analysis of supported sensitive entities, validation rules, and mapping strategy.
+- **[Tech Stack](tech_stack.md)** — Explanation of the selected technologies and future improvements.
+- **[Limitations & Observations](limitations.md)** — Known limitations, edge cases, and future enhancement opportunities.
 
 
 ---
