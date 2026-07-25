@@ -51,6 +51,7 @@ httpx==0.28.1
 huggingface_hub==1.24.0
 idna==3.18
 imagesize==2.0.0
+pywin32==312
 iopath==0.1.10
 itsdangerous==2.2.0
 Jinja2==3.1.6
