@@ -1,7 +1,10 @@
 # byePII — Enterprise Document Anonymization Platform
 
-### Live Demo: **[https://your-live-demo-link.com](https://your-live-demo-link.com)**
+### Live Demo
 
+**https://byepii.streamlit.app**
+
+> **⚠️ Currently unavailable.** The Streamlit Cloud deployment is failing due to dependency installation issues (100+ packages). Please clone the repository and run the application locally until the deployment is fixed.
 <p align="center">
   <img src="assets/banner.png" alt="byePII Banner" width="100%" style="border-radius: 12px;" />
 </p>
@@ -134,11 +137,11 @@ byePII is designed with scalability in mind. Some of the planned improvements in
 
 <br>
 
-<a href="https://github.com/your-github-link">
+<a href="https://github.com/ak-2045">
   <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
 </a>
 
-<a href="https://linkedin.com/in/your-linkedin-link">
+<a href="https://www.linkedin.com/in/akmal-hossain-72a7b5277">
   <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
 </a>
 
